@@ -39,7 +39,8 @@ def login():
 		or request.form[ 'password' ] != app.config[ 'PASSWORD' ]: 
 			error = 'Invalid Credentials. Please try again.' 
 			return render_template( 'login.html' , error=error) 
-		else: session[ 'logged_in' ] = True
+		else: 
+			session[ 'logged_in' ] = True
 			flash( 'Welcome!' ) 
 			return redirect(url_for( 'tasks' )) 
 	return render_template( 'login.html' )
